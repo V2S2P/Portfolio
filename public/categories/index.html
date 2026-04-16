@@ -595,7 +595,8 @@ async function sendMessage() {
     chatBox.appendChild(loading);
 
     try {
-        const res = await fetch("http://localhost:7000/chat", {
+        
+        const res = await fetch("http://100.110.141.104:7000/chat", {
             method: "POST",
             headers: { "Content-Type": "text/plain" },
             body: message
