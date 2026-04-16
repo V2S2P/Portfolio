@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Development on Blowfish</title>
+    <link>http://localhost:5862/series/web-development/</link>
+    <description>Recent content in Web Development on Blowfish</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:5862/series/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web Development Basics</title>
+      <link>http://localhost:5862/lessons/lesson2/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:5862/lessons/lesson2/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

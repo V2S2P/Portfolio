@@ -1,0 +1,45 @@
+<div id="chat-box"></div>
+
+<input id="chat-input" type="text" placeholder="Ask something..." />
+<button onclick="sendMessage()">Send</button>
+
+<script>
+const chatBox = document.getElementById("chat-box");
+const input = document.getElementById("chat-input");
+
+function addLine(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    chatBox.appendChild(div);
+}
+
+async function sendMessage() {
+    const message = input.value;
+    if (!message.trim()) return;
+
+    addLine("You: " + message);
+    input.value = "";
+
+    const loading = document.createElement("div");
+    loading.textContent = "Bot is thinking...";
+    chatBox.appendChild(loading);
+
+    try {
+        const res = await fetch("http://localhost:7000/chat", {
+            method: "POST",
+            headers: { "Content-Type": "text/plain" },
+            body: message
+        });
+
+        const answer = await res.text();
+
+        loading.remove();
+        addLine("Bot: " + answer);
+
+    } catch (err) {
+        loading.remove();
+        addLine("Bot: backend not reachable");
+        console.error(err);
+    }
+}
+</script>

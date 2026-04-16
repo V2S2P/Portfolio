@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lessons on Blowfish</title>
+    <link>http://localhost:1313/lessons/</link>
+    <description>Recent content in Lessons on Blowfish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/lessons/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Introduction to RAG-Chatbot</title>
+      <link>http://localhost:1313/lessons/rag-chatbots-secondlesson/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/lessons/rag-chatbots-secondlesson/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to AI-Driven Applications</title>
+      <link>http://localhost:1313/lessons/intro-ai-firstlesson/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/lessons/intro-ai-firstlesson/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
