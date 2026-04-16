@@ -4,6 +4,7 @@
 <button onclick="sendMessage()">Send</button>
 
 <script>
+const API_URL = "http://100.110.141.104:7000/chat";
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("chat-input");
 
@@ -26,7 +27,7 @@ async function sendMessage() {
 
     try {
         // Use "http://localhost:7000/chat" only for completely local testing.
-        const res = await fetch("http://100.110.141.104:7000/chat", {
+        const res = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "text/plain" },
             body: message
