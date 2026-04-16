@@ -5,7 +5,10 @@
 
 <script>
 //const API_URL = "http://100.110.141.104:7000/chat";
-const API_URL = "https://desktop-frmtli1.taild8f6b7.ts.net/chat";
+const API_URL =
+  location.hostname === "localhost"
+    ? "http://localhost:7000/chat"
+    : "https://desktop-frmtli1.taild8f6b7.ts.net/chat";
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("chat-input");
 
