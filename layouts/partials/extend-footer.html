@@ -1,3 +1,130 @@
+<style>
+/* ===== CHAT WRAPPER (keeps it theme-native) ===== */
+#chat-box {
+    max-width: 520px;
+    height: 520px;
+    overflow-y: auto;
+
+    /* Blend into Blowfish-style cards */
+    background: var(--card-background, rgba(255,255,255,0.8));
+    border: 1px solid var(--card-border, rgba(0,0,0,0.08));
+    border-radius: 1rem;
+
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+
+    /* subtle Blowfish-like softness */
+    box-shadow: var(--shadow, 0 6px 20px rgba(0,0,0,0.06));
+
+    font-family: inherit;
+}
+
+/* ===== MESSAGES (clean, minimal, theme-consistent) ===== */
+#chat-box div {
+    margin: 0.4rem 0;
+    padding: 0.55rem 0.75rem;
+
+    border-radius: 0.75rem;
+
+    font-size: 0.95rem;
+    line-height: 1.4;
+
+    word-break: break-word;
+
+    /* no harsh colors — rely on theme text color */
+    color: var(--body-text, inherit);
+}
+
+/* Slight differentiation without “app UI bubbles” */
+#chat-box div:nth-child(odd) {
+    background: var(--card-subtle, rgba(0,0,0,0.04));
+}
+
+/* Bot messages feel slightly more muted */
+#chat-box div:contains("Bot:") {
+    opacity: 0.95;
+}
+
+/* ===== INPUT AREA ===== */
+#chat-input {
+    width: 340px;
+    max-width: 70vw;
+
+    padding: 0.65rem 0.85rem;
+
+    border-radius: 0.75rem;
+
+    border: 1px solid var(--card-border, rgba(0,0,0,0.12));
+
+    background: var(--card-background, rgba(255,255,255,0.85));
+
+    color: var(--body-text, inherit);
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+#chat-input:focus {
+    border-color: var(--primary, #6366f1);
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Placeholder blends into theme */
+#chat-input::placeholder {
+    color: var(--muted-text, rgba(0,0,0,0.4));
+}
+
+/* ===== BUTTON (Blowfish-style subtle accent) ===== */
+button {
+    padding: 0.65rem 0.9rem;
+
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+
+    background: var(--primary, #6366f1);
+    color: white;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: transform 0.05s ease, opacity 0.15s ease;
+}
+
+button:hover {
+    opacity: 0.92;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ===== DARK MODE (inherits Blowfish dark variables if present) ===== */
+@media (prefers-color-scheme: dark) {
+    #chat-box {
+        background: var(--card-background, rgba(17,24,39,0.6));
+        border: 1px solid var(--card-border, rgba(255,255,255,0.08));
+    }
+
+    #chat-box div {
+        color: var(--body-text, #e5e7eb);
+    }
+
+    #chat-input {
+        background: var(--card-background, rgba(17,24,39,0.6));
+        border: 1px solid var(--card-border, rgba(255,255,255,0.12));
+        color: var(--body-text, #e5e7eb);
+    }
+
+    #chat-input::placeholder {
+        color: rgba(255,255,255,0.4);
+    }
+}
+</style>
+
 <div id="chat-box"></div>
 
 <input id="chat-input" type="text" placeholder="Ask something..." />
@@ -7,14 +134,28 @@
 //const API_URL = "http://100.110.141.104:7000/chat";
 const API_URL =
   location.hostname === "localhost"
-    ? "http://localhost:7000/chat"
+    ? "http://localhost:7070/chat"
     : "https://desktop-frmtli1.taild8f6b7.ts.net/chat";
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("chat-input");
 
+function formatMarkdown(text) {
+    return text
+        // Headings
+        .replace(/^## (.*$)/gim, '<h3>$1</h3>')
+
+        // Bullet points
+        .replace(/^- (.*$)/gim, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>')
+
+        // Line breaks
+        .replace(/\n/g, '<br>');
+}
+
 function addLine(text) {
     const div = document.createElement("div");
     div.textContent = text;
+    div.innerHTML = formatMarkdown(text)
     chatBox.appendChild(div);
 }
 

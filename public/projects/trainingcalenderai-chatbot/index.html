@@ -738,18 +738,164 @@ Short intro text here.</p>
   
   
   
-    <div id="chat-box"></div>
+    <style>
+ 
+#chat-box {
+    max-width: 520px;
+    height: 520px;
+    overflow-y: auto;
+
+     
+    background: var(--card-background, rgba(255,255,255,0.8));
+    border: 1px solid var(--card-border, rgba(0,0,0,0.08));
+    border-radius: 1rem;
+
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+
+     
+    box-shadow: var(--shadow, 0 6px 20px rgba(0,0,0,0.06));
+
+    font-family: inherit;
+}
+
+ 
+#chat-box div {
+    margin: 0.4rem 0;
+    padding: 0.55rem 0.75rem;
+
+    border-radius: 0.75rem;
+
+    font-size: 0.95rem;
+    line-height: 1.4;
+
+    word-break: break-word;
+
+     
+    color: var(--body-text, inherit);
+}
+
+ 
+#chat-box div:nth-child(odd) {
+    background: var(--card-subtle, rgba(0,0,0,0.04));
+}
+
+ 
+#chat-box div:contains("Bot:") {
+    opacity: 0.95;
+}
+
+ 
+#chat-input {
+    width: 340px;
+    max-width: 70vw;
+
+    padding: 0.65rem 0.85rem;
+
+    border-radius: 0.75rem;
+
+    border: 1px solid var(--card-border, rgba(0,0,0,0.12));
+
+    background: var(--card-background, rgba(255,255,255,0.85));
+
+    color: var(--body-text, inherit);
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+#chat-input:focus {
+    border-color: var(--primary, #6366f1);
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+ 
+#chat-input::placeholder {
+    color: var(--muted-text, rgba(0,0,0,0.4));
+}
+
+ 
+button {
+    padding: 0.65rem 0.9rem;
+
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+
+    background: var(--primary, #6366f1);
+    color: white;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: transform 0.05s ease, opacity 0.15s ease;
+}
+
+button:hover {
+    opacity: 0.92;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+ 
+@media (prefers-color-scheme: dark) {
+    #chat-box {
+        background: var(--card-background, rgba(17,24,39,0.6));
+        border: 1px solid var(--card-border, rgba(255,255,255,0.08));
+    }
+
+    #chat-box div {
+        color: var(--body-text, #e5e7eb);
+    }
+
+    #chat-input {
+        background: var(--card-background, rgba(17,24,39,0.6));
+        border: 1px solid var(--card-border, rgba(255,255,255,0.12));
+        color: var(--body-text, #e5e7eb);
+    }
+
+    #chat-input::placeholder {
+        color: rgba(255,255,255,0.4);
+    }
+}
+</style>
+
+<div id="chat-box"></div>
 
 <input id="chat-input" type="text" placeholder="Ask something..." />
 <button onclick="sendMessage()">Send</button>
 
 <script>
+
+const API_URL =
+  location.hostname === "localhost"
+    ? "http://localhost:7070/chat"
+    : "https://desktop-frmtli1.taild8f6b7.ts.net/chat";
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("chat-input");
+
+function formatMarkdown(text) {
+    return text
+        
+        .replace(/^## (.*$)/gim, '<h3>$1</h3>')
+
+        
+        .replace(/^- (.*$)/gim, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>')
+
+        
+        .replace(/\n/g, '<br>');
+}
 
 function addLine(text) {
     const div = document.createElement("div");
     div.textContent = text;
+    div.innerHTML = formatMarkdown(text)
     chatBox.appendChild(div);
 }
 
@@ -766,7 +912,7 @@ async function sendMessage() {
 
     try {
         
-        const res = await fetch("http://100.110.141.104:7000/chat", {
+        const res = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "text/plain" },
             body: message
