@@ -1,10 +1,6 @@
 ---
 title: "Lessons"
-description: "Welcome to my portfolio"
+description: "Notes from the AI-Driven Applications course"
 ---
 
-# Welcome to My Portfolio 👋
-
-This is where I document what I learn.
-
-👉 Go to [My Lessons](/lessons) to explore my learning journey.
+Each post captures what I learned in a given session — from setting up this site to building RAG pipelines and deploying AI agents.

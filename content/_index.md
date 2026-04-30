@@ -5,7 +5,7 @@ description: "Welcome to my portfolio"
 
 # Welcome to My Portfolio
 
-This is a collection of lessons and projects I've worked on.
+A collection of lessons and projects documenting my journey through AI-driven application development.
 
-👉 Visit my [Lessons](/lessons) to see what I’ve learned.  
-👉 Visit my [Projects](/projects) to explore my work.
+- [Lessons](/lessons) — notes from each course session
+- [Projects](/projects) — hands-on builds from the course

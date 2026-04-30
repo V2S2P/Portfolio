@@ -1,10 +1,6 @@
 ---
 title: "AI Projects"
-description: "Welcome to my portfolio of projects related to AI"
+description: "Projects built during the AI-Driven Applications course"
 ---
 
-# Welcome to my Portfolio of projects related to AI 👋
-
-This is where I document what I learn.
-
-👉 Go to [My Lessons](/lessons) to explore my learning journey.
+Hands-on projects built alongside the course — local LLM chatbots, AI-powered assistants, and more.

@@ -1,0 +1,1966 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en-us">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Testing Claude Code&#39;s Token Optimization Skill &middot; Blowfish</title>
+    <meta name="title" content="Testing Claude Code&#39;s Token Optimization Skill &middot; Blowfish">
+  
+
+  
+  
+    <meta name="description" content="A structured comparison of standard vs. token-optimized Claude Code output across a coding task and quiz — single run and 5-run study.">
+  
+  
+    <meta name="keywords" content="claude,ai,token-optimization,experiment,">
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/lessons/claude-token-optimization-test/">
+  
+
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/lessons/claude-token-optimization-test/">
+  <meta property="og:site_name" content="Blowfish">
+  <meta property="og:title" content="Testing Claude Code&#39;s Token Optimization Skill">
+  <meta property="og:description" content="A structured comparison of standard vs. token-optimized Claude Code output across a coding task and quiz — single run and 5-run study.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="lessons">
+    <meta property="article:published_time" content="2026-04-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-30T00:00:00+00:00">
+    <meta property="article:tag" content="Claude">
+    <meta property="article:tag" content="Ai">
+    <meta property="article:tag" content="Token-Optimization">
+    <meta property="article:tag" content="Experiment">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Testing Claude Code&#39;s Token Optimization Skill">
+  <meta name="twitter:description" content="A structured comparison of standard vs. token-optimized Claude Code output across a coding task and quiz — single run and 5-run study.">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.dc8fe411dbbe7939b35fad848218bcb8e0a84ed68becff9a3964e78318b639245b2cd72cd7dc316ad515d8cbf09ad89baf3e965a447db6824deb995f9d955fb2.css"
+    integrity="sha512-3I/kEdu&#43;eTmzX62Eghi8uOCoTtaL7P&#43;aOWTngxi2OSRbLNcs19wxatUV2Mvwmtibrz6WWkR9toJN65lfnZVfsg==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.b4b722fcb5d42f34f52b30a92f3521b69f403ca9d96d0d6179eb537cb870f5d83fdf1fe836688d95d5c99fefbda4170487711006e56051fa67ea00da10521721.js" integrity="sha512-tLci/LXULzT1KzCpLzUhtp9APKnZbQ1heetTfLhw9dg/3x/oNmiNldXJn&#43;&#43;9pBcEh3EQBuVgUfpn6gDaEFIXIQ=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.a9999e7d5a6aa7827cf40e5da4e36f779fb70170a0e3d58b9ec4b471f41eba10b952a1f8f566b7c3ebdfb5e936e7b63af610cfb815f75fc5d91684e704a34cd5.js"
+      integrity="sha512-qZmefVpqp4J89A5dpONvd5&#43;3AXCg49WLnsS0cfQeuhC5UqH49Wa3w&#43;vftek257Y69hDPuBX3X8XZFoTnBKNM1Q=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Lessons",
+    "name": "Testing Claude Code\u0027s Token Optimization Skill",
+    "headline": "Testing Claude Code\u0027s Token Optimization Skill",
+    "description": "A structured comparison of standard vs. token-optimized Claude Code output across a coding task and quiz — single run and 5-run study.",
+    "inLanguage": "en-us",
+    "url" : "http://localhost:1313/lessons/claude-token-optimization-test/",
+    "author" : {
+      "@type": "Person",
+      "name": ""
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-04-30T00:00:00\u002b00:00",
+    "datePublished": "2026-04-30T00:00:00\u002b00:00",
+    
+    "dateModified": "2026-04-30T00:00:00\u002b00:00",
+    
+    "keywords": ["claude","ai","token-optimization","experiment"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1376"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral bf-scrollbar">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl bg-neutral/25 dark:bg-neutral-800/25"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+  
+  
+    <a href="/" class="text-base font-medium truncate min-w-0 shrink">
+      Blowfish
+    </a>
+  
+  <div class="flex items-center ms-auto">
+    <div class="hidden md:flex">
+      <nav class="flex items-center gap-x-5 h-12">
+  
+    
+      
+  
+    <a
+      href="/lessons/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Lessons"
+      title="Lessons">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Lessons
+        </span>
+      
+    </a>
+  
+
+    
+      
+  
+    <a
+      href="/projects/"
+      
+      class="flex items-center bf-icon-color-hover"
+      aria-label="Projects"
+      title="AI Projects">
+      
+      
+        <span class="text-base font-medium break-normal">
+          Projects
+        </span>
+      
+    </a>
+  
+
+    
+  
+
+  
+
+  
+
+  
+    <button
+      id="search-button"
+      aria-label="Search"
+      class="text-base bf-icon-color-hover"
+      title="Search (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <div class="flex items-center">
+      <button
+        id="appearance-switcher"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base bf-icon-color-hover">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    </div>
+  
+</nav>
+
+
+
+    </div>
+    <div class="flex md:hidden">
+      <div class="flex items-center h-14 gap-4">
+  
+    <button
+      id="search-button-mobile"
+      aria-label="Search"
+      class="flex items-center justify-center bf-icon-color-hover"
+      title="Search (/)">
+      <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+    </button>
+  
+
+  
+    <button
+      id="appearance-switcher-mobile"
+      type="button"
+      aria-label="Dark mode switcher"
+      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
+      <div class="dark:hidden">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+      </div>
+      <div class="hidden dark:block">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+      </div>
+    </button>
+  
+
+  
+    <input type="checkbox" id="mobile-menu-toggle" autocomplete="off" class="hidden peer">
+    <label for="mobile-menu-toggle" class="flex items-center justify-center cursor-pointer bf-icon-color-hover">
+      <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+    </label>
+
+    <div
+      role="dialog"
+      aria-modal="true"
+      style="scrollbar-gutter: stable;"
+      class="fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99
+      bf-scrollbar">
+      <label
+        for="mobile-menu-toggle"
+        class="fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </label>
+      <nav class="mx-auto max-w-md space-y-6">
+        
+  
+    
+    <div class="px-2">
+      <a
+        href="/lessons/"
+        aria-label="Lessons"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="Lessons" class="text-2xl font-bold tracking-tight">
+          Lessons
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+    
+    <div class="px-2">
+      <a
+        href="/projects/"
+        aria-label="Projects"
+        
+        class="flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
+        
+        <span title="AI Projects" class="text-2xl font-bold tracking-tight">
+          Projects
+        </span>
+        
+      </a>
+
+      
+    </div>
+  
+
+        
+  
+
+        
+  
+
+      </nav>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
+  integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
+  data-blur-id="menu-blur"></script>
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >Home</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/lessons/"
+      >Lessons</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/lessons/claude-token-optimization-test/"
+      >Testing Claude Code&#39;s Token Optimization Skill</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Testing Claude Code's Token Optimization Skill
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2026-04-30T00:00:00&#43;00:00">30 April 2026</time><span class="px-2 text-primary-500">&middot;</span><span>1376 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-this-is">What This Is</a></li>
+    <li><a href="#why-i-did-it">Why I Did It</a></li>
+    <li><a href="#the-test">The Test</a></li>
+    <li><a href="#single-run-results">Single-Run Results</a></li>
+    <li><a href="#5-run-study">5-Run Study</a>
+      <ul>
+        <li><a href="#standard-mode-skill-off">Standard Mode (Skill Off)</a></li>
+        <li><a href="#optimized-mode-skill-on">Optimized Mode (Skill On)</a></li>
+        <li><a href="#aggregate-comparison">Aggregate Comparison</a></li>
+      </ul>
+    </li>
+    <li><a href="#output-quality">Output Quality</a>
+      <ul>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#consistency">Consistency</a></li>
+      </ul>
+    </li>
+    <li><a href="#impact-on-plan-usage-limits">Impact on Plan Usage Limits</a></li>
+    <li><a href="#takeaways">Takeaways</a></li>
+    <li><a href="#skill-v2-quality-preserving-compression">Skill v2: Quality-Preserving Compression</a>
+      <ul>
+        <li><a href="#v2-5-run-results">v2 5-Run Results</a></li>
+        <li><a href="#three-way-comparison">Three-Way Comparison</a></li>
+        <li><a href="#code-quality">Code Quality</a></li>
+        <li><a href="#quiz-quality">Quiz Quality</a></li>
+        <li><a href="#consistency-1">Consistency</a></li>
+        <li><a href="#impact-on-plan-usage-limits-1">Impact on Plan Usage Limits</a></li>
+        <li><a href="#takeaways-1">Takeaways</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-this-is">What This Is</a></li>
+    <li><a href="#why-i-did-it">Why I Did It</a></li>
+    <li><a href="#the-test">The Test</a></li>
+    <li><a href="#single-run-results">Single-Run Results</a></li>
+    <li><a href="#5-run-study">5-Run Study</a>
+      <ul>
+        <li><a href="#standard-mode-skill-off">Standard Mode (Skill Off)</a></li>
+        <li><a href="#optimized-mode-skill-on">Optimized Mode (Skill On)</a></li>
+        <li><a href="#aggregate-comparison">Aggregate Comparison</a></li>
+      </ul>
+    </li>
+    <li><a href="#output-quality">Output Quality</a>
+      <ul>
+        <li><a href="#code">Code</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#consistency">Consistency</a></li>
+      </ul>
+    </li>
+    <li><a href="#impact-on-plan-usage-limits">Impact on Plan Usage Limits</a></li>
+    <li><a href="#takeaways">Takeaways</a></li>
+    <li><a href="#skill-v2-quality-preserving-compression">Skill v2: Quality-Preserving Compression</a>
+      <ul>
+        <li><a href="#v2-5-run-results">v2 5-Run Results</a></li>
+        <li><a href="#three-way-comparison">Three-Way Comparison</a></li>
+        <li><a href="#code-quality">Code Quality</a></li>
+        <li><a href="#quiz-quality">Quiz Quality</a></li>
+        <li><a href="#consistency-1">Consistency</a></li>
+        <li><a href="#impact-on-plan-usage-limits-1">Impact on Plan Usage Limits</a></li>
+        <li><a href="#takeaways-1">Takeaways</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">What This Is
+    <div id="what-this-is" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#what-this-is" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Claude Code is Anthropic&rsquo;s official CLI for Claude — an AI assistant you interact with directly in your terminal or IDE. One of its features is a <strong>skills system</strong>: pre-configured instruction sets that modify how Claude responds for a given task.</p>
+<p>The <code>token_optimization</code> skill instructs Claude to minimize token usage at all times — shorter answers, no docstrings, abbreviated names, compact formatting. The goal is to get the same functional output with fewer words.</p>
+<p>This post documents a controlled test of that skill: the same task, run twice (once without the skill, once with), and then repeated five times in each mode to check consistency.</p>
+<hr>
+
+<h2 class="relative group">Why I Did It
+    <div id="why-i-did-it" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#why-i-did-it" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Token usage matters for two reasons:</p>
+<ol>
+<li><strong>Plan limits</strong> — Claude&rsquo;s usage plans cap how many tokens you can consume per period. Fewer output tokens per interaction means more interactions before hitting a ceiling.</li>
+<li><strong>Response quality</strong> — Reducing tokens without losing accuracy is useful. But reducing tokens at the cost of readability is a trade-off worth measuring.</li>
+</ol>
+<p>I wanted to see the actual numbers, not just assume the skill helps.</p>
+<hr>
+
+<h2 class="relative group">The Test
+    <div id="the-test" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-test" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p><strong>Task (identical for all runs):</strong></p>
+<blockquote><p>Implement a Binary Search Tree in Python with insert, search, and in-order traversal methods. Then generate a 5-question multiple choice quiz about the implementation, with 4 options per question and feedback for each option.</p>
+</blockquote><p><strong>Measurement method:</strong> Character count ÷ 4 (standard approximation for English + code token estimation). Margin of error: ±10–15%.</p>
+<hr>
+
+<h2 class="relative group">Single-Run Results
+    <div id="single-run-results" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#single-run-results" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>The first comparison was one run of each mode.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Metric</th>
+          <th>Standard</th>
+          <th>Optimized</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Estimated output tokens</td>
+          <td>~1,175</td>
+          <td>~415</td>
+      </tr>
+      <tr>
+          <td>Share of combined output</td>
+          <td>74%</td>
+          <td>26%</td>
+      </tr>
+      <tr>
+          <td>Token reduction</td>
+          <td>—</td>
+          <td><strong>~65%</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>Both runs produced correct code and accurate quiz questions. The reduction came from removing docstrings, verbose feedback, expanded variable names, and the <code>__main__</code> block — not from cutting content coverage.</p>
+<hr>
+
+<h2 class="relative group">5-Run Study
+    <div id="5-run-study" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#5-run-study" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>To check consistency, the test was repeated five times in each mode.</p>
+
+<h3 class="relative group">Standard Mode (Skill Off)
+    <div id="standard-mode-skill-off" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#standard-mode-skill-off" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Run</th>
+          <th>Est. Tokens</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>S1</td>
+          <td>~1,050</td>
+      </tr>
+      <tr>
+          <td>S2</td>
+          <td>~1,113</td>
+      </tr>
+      <tr>
+          <td>S3</td>
+          <td>~1,038</td>
+      </tr>
+      <tr>
+          <td>S4</td>
+          <td>~1,128</td>
+      </tr>
+      <tr>
+          <td>S5</td>
+          <td>~1,038</td>
+      </tr>
+      <tr>
+          <td><strong>Average</strong></td>
+          <td><strong>~1,073</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>Range: 1,038–1,128 | Std dev: ±38 tokens</p>
+
+<h3 class="relative group">Optimized Mode (Skill On)
+    <div id="optimized-mode-skill-on" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#optimized-mode-skill-on" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Run</th>
+          <th>Est. Tokens</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>O1</td>
+          <td>~398</td>
+      </tr>
+      <tr>
+          <td>O2</td>
+          <td>~333</td>
+      </tr>
+      <tr>
+          <td>O3</td>
+          <td>~358</td>
+      </tr>
+      <tr>
+          <td>O4</td>
+          <td>~390</td>
+      </tr>
+      <tr>
+          <td>O5</td>
+          <td>~305</td>
+      </tr>
+      <tr>
+          <td><strong>Average</strong></td>
+          <td><strong>~357</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>Range: 305–398 | Std dev: ±38 tokens</p>
+
+<h3 class="relative group">Aggregate Comparison
+    <div id="aggregate-comparison" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#aggregate-comparison" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Metric</th>
+          <th>Standard</th>
+          <th>Optimized</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Avg estimated tokens</td>
+          <td>1,073</td>
+          <td>357</td>
+      </tr>
+      <tr>
+          <td>Share of combined avg</td>
+          <td>75%</td>
+          <td>25%</td>
+      </tr>
+      <tr>
+          <td>Avg token reduction</td>
+          <td>—</td>
+          <td><strong>~67%</strong></td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">S1  ████████████████████████████░░░░░░░░░░░░  1,050
+</span></span><span class="line"><span class="cl">S2  ██████████████████████████████░░░░░░░░░░  1,113
+</span></span><span class="line"><span class="cl">S3  ████████████████████████████░░░░░░░░░░░░  1,038
+</span></span><span class="line"><span class="cl">S4  ██████████████████████████████░░░░░░░░░░  1,128
+</span></span><span class="line"><span class="cl">S5  ████████████████████████████░░░░░░░░░░░░  1,038
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">O1  ███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    398
+</span></span><span class="line"><span class="cl">O2  █████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    333
+</span></span><span class="line"><span class="cl">O3  ██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    358
+</span></span><span class="line"><span class="cl">O4  ███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    390
+</span></span><span class="line"><span class="cl">O5  ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    305</span></span></code></pre></div></div>
+<hr>
+
+<h2 class="relative group">Output Quality
+    <div id="output-quality" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#output-quality" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Both modes produced functionally correct code and factually accurate quizzes across all runs.</p>
+
+<h3 class="relative group">Code
+    <div id="code" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#code" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Attribute</th>
+          <th>Standard</th>
+          <th>Optimized</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Docstrings</td>
+          <td>Full, every method</td>
+          <td>None in most runs</td>
+      </tr>
+      <tr>
+          <td>Variable naming</td>
+          <td>Descriptive (<code>value</code>, <code>node</code>)</td>
+          <td>Abbreviated (<code>v</code>, <code>n</code>)</td>
+      </tr>
+      <tr>
+          <td>Inline comments</td>
+          <td>Yes</td>
+          <td>Minimal or none</td>
+      </tr>
+      <tr>
+          <td>Functional correctness</td>
+          <td>Correct, all 5 runs</td>
+          <td>Correct, all 5 runs</td>
+      </tr>
+      <tr>
+          <td>Readable by newcomer</td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>Run-to-run consistency</td>
+          <td>High</td>
+          <td>Moderate</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 class="relative group">Quiz
+    <div id="quiz" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#quiz" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Attribute</th>
+          <th>Standard</th>
+          <th>Optimized</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Question length</td>
+          <td>~10 words avg</td>
+          <td>~5 words avg</td>
+      </tr>
+      <tr>
+          <td>Feedback per option</td>
+          <td>1–2 sentences, explains why</td>
+          <td>3–8 words, verdict only</td>
+      </tr>
+      <tr>
+          <td>Factual accuracy</td>
+          <td>Correct, all 5 runs</td>
+          <td>Correct, all 5 runs</td>
+      </tr>
+      <tr>
+          <td>Suitable for self-study</td>
+          <td>Yes</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>Suitable for quick review</td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 class="relative group">Consistency
+    <div id="consistency" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#consistency" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th>Spread</th>
+          <th>Spread as % of avg</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Standard</td>
+          <td>90 tokens</td>
+          <td>~8%</td>
+      </tr>
+      <tr>
+          <td>Optimized</td>
+          <td>93 tokens</td>
+          <td>~26%</td>
+      </tr>
+  </tbody>
+</table>
+<p>Absolute spread was similar for both modes, but the optimized mode&rsquo;s spread is proportionally larger — meaning the skill compresses output less predictably run-to-run than standard mode produces it.</p>
+<hr>
+
+<h2 class="relative group">Impact on Plan Usage Limits
+    <div id="impact-on-plan-usage-limits" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#impact-on-plan-usage-limits" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Plan limits count <strong>total</strong> tokens — both input and output. Input tokens (the prompt, system context, conversation history) stay roughly the same regardless of which mode is used.</p>
+<p>Assuming ~400 input tokens per interaction:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th>Avg input</th>
+          <th>Avg output</th>
+          <th>Avg total</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Standard</td>
+          <td>~400</td>
+          <td>~1,073</td>
+          <td>~1,473</td>
+      </tr>
+      <tr>
+          <td>Optimized</td>
+          <td>~400</td>
+          <td>~357</td>
+          <td>~757</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Estimated total token reduction: ~49%</strong></p>
+<p>This is lower than the 67% output-only figure because input tokens are shared across both modes. In practical terms: roughly <strong>1.9× more interactions</strong> within the same plan limit per period, assuming input size stays constant.</p>
+<hr>
+
+<h2 class="relative group">Takeaways
+    <div id="takeaways" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#takeaways" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>The skill consistently reduced output tokens by ~67% across all 5 runs. The direction was the same every time — no optimized run exceeded any standard run.</li>
+<li>Correctness was not affected. Both modes delivered working code and accurate quizzes.</li>
+<li>The cost is readability and context. Optimized output is harder to follow without prior knowledge, and quiz feedback gives verdicts without explanations.</li>
+<li>The real-world plan usage reduction is ~49%, not 67%, once you account for input tokens.</li>
+<li>Standard mode is more consistent. Optimized mode varies more in how aggressively it compresses, which means the savings are less predictable run-to-run.</li>
+</ul>
+<p>Neither mode is strictly better. The appropriate choice depends on who will read the output and why.</p>
+<hr>
+
+<h2 class="relative group">Skill v2: Quality-Preserving Compression
+    <div id="skill-v2-quality-preserving-compression" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#skill-v2-quality-preserving-compression" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>The v1 results raised an obvious question: can you get most of the token savings without the quality regressions? The v1 skill was cutting too deep — removing docstrings, abbreviating class names (<code>BST</code> instead of <code>BinarySearchTree</code>), stripping <code>__main__</code> blocks, and reducing quiz feedback to bare verdicts. Correct output, but not code you&rsquo;d hand to someone else, and not quiz feedback that actually teaches anything.</p>
+<p>Version 2 of the skill was redesigned around two explicit zones:</p>
+<ul>
+<li><strong>COMPRESS</strong> — prose, filler, transitions, repetition. Cut everything here.</li>
+<li><strong>PRESERVE</strong> — code names, structure, conventions, and quiz reasoning. Never touch these.</li>
+</ul>
+<p>The specific changes: full descriptive class and method names always, a one-line docstring for every public class and function, standard <code>__main__</code> blocks retained, quiz feedback expanded to one sentence explaining <em>why</em> (not just &ldquo;Correct&rdquo;), and an explicit banned-phrase list to prevent filler from creeping back in.</p>
+
+<h3 class="relative group">v2 5-Run Results
+    <div id="v2-5-run-results" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#v2-5-run-results" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Run</th>
+          <th>Code (chars)</th>
+          <th>Quiz (chars)</th>
+          <th>Total (chars)</th>
+          <th>Est. tokens</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>V1</td>
+          <td>1,714</td>
+          <td>1,059</td>
+          <td>2,773</td>
+          <td>~693</td>
+      </tr>
+      <tr>
+          <td>V2</td>
+          <td>1,714</td>
+          <td>1,094</td>
+          <td>2,808</td>
+          <td>~702</td>
+      </tr>
+      <tr>
+          <td>V3</td>
+          <td>1,714</td>
+          <td>1,130</td>
+          <td>2,844</td>
+          <td>~711</td>
+      </tr>
+      <tr>
+          <td>V4</td>
+          <td>1,714</td>
+          <td>1,186</td>
+          <td>2,900</td>
+          <td>~725</td>
+      </tr>
+      <tr>
+          <td>V5</td>
+          <td>1,714</td>
+          <td>1,197</td>
+          <td>2,911</td>
+          <td>~728</td>
+      </tr>
+      <tr>
+          <td><strong>Average</strong></td>
+          <td><strong>1,714</strong></td>
+          <td><strong>1,133</strong></td>
+          <td><strong>2,847</strong></td>
+          <td><strong>~712</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>Range: 693–728 | Spread: ~35 tokens (~5% of avg)</p>
+
+<h3 class="relative group">Three-Way Comparison
+    <div id="three-way-comparison" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#three-way-comparison" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Metric</th>
+          <th>Standard</th>
+          <th>v1 Optimized</th>
+          <th>v2 Optimized</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Avg est. tokens</td>
+          <td>~1,073</td>
+          <td>~357</td>
+          <td>~712</td>
+      </tr>
+      <tr>
+          <td>vs. Standard</td>
+          <td>—</td>
+          <td>−67%</td>
+          <td>−34%</td>
+      </tr>
+      <tr>
+          <td>vs. v1</td>
+          <td>—</td>
+          <td>—</td>
+          <td>+99%</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Standard      ████████████████████████████████████████  ~1,073
+</span></span><span class="line"><span class="cl">v2 Optimized  ████████████████████████░░░░░░░░░░░░░░░░    ~712
+</span></span><span class="line"><span class="cl">v1 Optimized  █████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░    ~357</span></span></code></pre></div></div>
+
+<h3 class="relative group">Code Quality
+    <div id="code-quality" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#code-quality" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Attribute</th>
+          <th>Standard</th>
+          <th>v1 Optimized</th>
+          <th>v2 Optimized</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Class name</td>
+          <td><code>BinarySearchTree</code></td>
+          <td><code>BST</code></td>
+          <td><code>BinarySearchTree</code></td>
+      </tr>
+      <tr>
+          <td>Method names</td>
+          <td><code>inorder_traversal</code></td>
+          <td><code>inorder</code></td>
+          <td><code>inorder_traversal</code></td>
+      </tr>
+      <tr>
+          <td>Docstrings</td>
+          <td>Full, all methods</td>
+          <td>None</td>
+          <td>One-liner, public only</td>
+      </tr>
+      <tr>
+          <td><code>__main__</code> block</td>
+          <td>Yes, with labels</td>
+          <td>No (bare calls)</td>
+          <td>Yes, with inline comments</td>
+      </tr>
+      <tr>
+          <td>Functional correctness</td>
+          <td>Correct, all runs</td>
+          <td>Correct, all runs</td>
+          <td>Correct, all runs</td>
+      </tr>
+      <tr>
+          <td>Readability (newcomer)</td>
+          <td>High</td>
+          <td>Low</td>
+          <td>Moderate–High</td>
+      </tr>
+      <tr>
+          <td>Run-to-run consistency</td>
+          <td>High</td>
+          <td>Moderate</td>
+          <td>Very High</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 class="relative group">Quiz Quality
+    <div id="quiz-quality" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#quiz-quality" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Attribute</th>
+          <th>Standard</th>
+          <th>v1 Optimized</th>
+          <th>v2 Optimized</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Question length</td>
+          <td>~10 words avg</td>
+          <td>~5 words avg</td>
+          <td>~8 words avg</td>
+      </tr>
+      <tr>
+          <td>Feedback</td>
+          <td>1–2 sentences, explains why</td>
+          <td>3–8 words, verdict only</td>
+          <td>1 sentence, explains why</td>
+      </tr>
+      <tr>
+          <td>Suitable for self-study</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>Suitable for quick review</td>
+          <td>No</td>
+          <td>Yes</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 class="relative group">Consistency
+    <div id="consistency-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#consistency-1" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th>Spread</th>
+          <th>Spread as % of avg</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Standard</td>
+          <td>~90 tokens</td>
+          <td>~8%</td>
+      </tr>
+      <tr>
+          <td>v1 Optimized</td>
+          <td>~93 tokens</td>
+          <td>~26%</td>
+      </tr>
+      <tr>
+          <td>v2 Optimized</td>
+          <td>~35 tokens</td>
+          <td>~5%</td>
+      </tr>
+  </tbody>
+</table>
+<p>Code output was identical across all 5 v2 runs (1,714 chars every time). The PRESERVE rules lock structure and naming completely — only quiz question wording varies run-to-run. v2 is more predictable than either prior mode, despite sitting between them on token volume.</p>
+
+<h3 class="relative group">Impact on Plan Usage Limits
+    <div id="impact-on-plan-usage-limits-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#impact-on-plan-usage-limits-1" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th>Avg input</th>
+          <th>Avg output</th>
+          <th>Avg total</th>
+          <th>vs. Standard</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Standard</td>
+          <td>~400</td>
+          <td>~1,073</td>
+          <td>~1,473</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td>v1 Optimized</td>
+          <td>~400</td>
+          <td>~357</td>
+          <td>~757</td>
+          <td>−49%</td>
+      </tr>
+      <tr>
+          <td>v2 Optimized</td>
+          <td>~400</td>
+          <td>~712</td>
+          <td>~1,112</td>
+          <td>−25%</td>
+      </tr>
+  </tbody>
+</table>
+<p>v1 gave roughly 1.9× more interactions per plan period. v2 gives ~1.3× — meaningful, but more conservative. The gap reflects the token cost of restoring docstrings, full names, <code>__main__</code>, and quiz reasoning.</p>
+
+<h3 class="relative group">Takeaways
+    <div id="takeaways-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#takeaways-1" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>v2 reduces output tokens by ~34% from Standard — meaningful compression without touching anything that affects usability.</li>
+<li>All quality regressions from v1 are closed: descriptive names, public docstrings, <code>__main__</code> blocks, and quiz reasoning are all restored.</li>
+<li>v2 is significantly more consistent than v1. Code output is completely deterministic across runs; only quiz wording introduces any variation.</li>
+<li>The token cost of quality is real but bounded: v2 uses ~72% more tokens than v1, almost entirely from the restored quality features.</li>
+<li>v2 is a better fit for always-on usage. v1 is the right choice when maximum compression matters more than readability; v2 is the right choice when the output needs to stand on its own.</li>
+</ul>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span class="flex flex-col">
+          
+            <a
+              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+              href="/lessons/ai-agents-fourthlesson/">
+              <span class="leading-6">
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;AI-Agents
+              </span>
+            </a>
+            
+              <span class="ms-6 mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <time datetime="2026-04-20T00:00:00&#43;00:00">20 April 2026</time>
+              </span>
+            
+          
+        </span>
+        <span class="flex flex-col items-end">
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2026
+          
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+    <style>
+#chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  font-family: inherit;
+}
+
+#chat-panel {
+  display: none;
+  flex-direction: column;
+  width: 360px;
+  max-width: calc(100vw - 48px);
+  height: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #ffffff;
+}
+
+#chat-panel.open {
+  display: flex;
+}
+
+.dark #chat-panel {
+  background: #1f2937;
+  border-color: rgba(255,255,255,0.08);
+}
+
+#chat-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  flex-shrink: 0;
+}
+
+#chat-panel-header span {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#chat-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.1s, background 0.1s;
+}
+
+#chat-close-btn:hover {
+  color: white;
+  background: rgba(255,255,255,0.15);
+}
+
+#chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 9px 13px;
+  border-radius: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: #111827;
+  border-bottom-left-radius: 4px;
+}
+
+.dark .chat-bubble.bot {
+  background: #374151;
+  color: #f3f4f6;
+}
+
+.chat-bubble.thinking {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-style: italic;
+  border-bottom-left-radius: 4px;
+}
+
+.dark .chat-bubble.thinking {
+  background: #374151;
+  color: #9ca3af;
+}
+
+.chat-bubble ul {
+  margin: 4px 0;
+  padding-left: 16px;
+}
+
+#chat-input-row {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  flex-shrink: 0;
+}
+
+.dark #chat-input-row {
+  border-top-color: rgba(255,255,255,0.07);
+}
+
+#chat-text-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #f9fafb;
+  color: #111827;
+  font-family: inherit;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#chat-text-input:focus {
+  border-color: rgb(var(--color-primary-600));
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-600), 0.12);
+}
+
+.dark #chat-text-input {
+  background: #374151;
+  border-color: rgba(255,255,255,0.12);
+  color: #f9fafb;
+}
+
+.dark #chat-text-input::placeholder {
+  color: #9ca3af;
+}
+
+#chat-send-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: inherit;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+#chat-send-btn:hover {
+  opacity: 0.88;
+}
+
+#chat-send-btn:active {
+  transform: scale(0.97);
+}
+
+#chat-toggle-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+#chat-toggle-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+}
+</style>
+
+<div id="chat-widget">
+  <div id="chat-panel" role="dialog" aria-label="AI Assistant">
+    <div id="chat-panel-header">
+      <span>AI Assistant</span>
+      <button id="chat-close-btn" onclick="toggleChatPanel()" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chat-messages" aria-live="polite"></div>
+    <div id="chat-input-row">
+      <input id="chat-text-input" type="text" placeholder="Ask something..." autocomplete="off" />
+      <button id="chat-send-btn" onclick="sendChatMessage()">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle-btn" onclick="toggleChatPanel()" aria-label="Open AI chat">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+(function () {
+  const API_URL = location.hostname === "localhost"
+    ? "http://localhost:7070/chat"
+    : "https://desktop-frmtli1.taild8f6b7.ts.net/chat";
+
+  window.toggleChatPanel = function () {
+    const panel = document.getElementById("chat-panel");
+    panel.classList.toggle("open");
+    if (panel.classList.contains("open")) {
+      document.getElementById("chat-text-input").focus();
+    }
+  };
+
+  function formatMarkdown(text) {
+    return text
+      .replace(/^## (.*$)/gim, '<strong>$1</strong>')
+      .replace(/^- (.*$)/gim, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>')
+      .replace(/\n/g, '<br>');
+  }
+
+  function addBubble(text, type) {
+    const messages = document.getElementById("chat-messages");
+    const div = document.createElement("div");
+    div.className = "chat-bubble " + type;
+    if (type === "bot") {
+      div.innerHTML = formatMarkdown(text);
+    } else {
+      div.textContent = text;
+    }
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
+
+  window.sendChatMessage = async function () {
+    const input = document.getElementById("chat-text-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    addBubble(message, "user");
+    input.value = "";
+
+    const thinking = addBubble("Thinking…", "thinking");
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: message
+      });
+      const answer = await res.text();
+      thinking.remove();
+      addBubble(answer, "bot");
+    } catch (err) {
+      thinking.remove();
+      addBubble("Backend not reachable.", "bot");
+      console.error(err);
+    }
+  };
+
+  document.getElementById("chat-text-input").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") window.sendChatMessage();
+  });
+})();
+</script>
+
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

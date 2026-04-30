@@ -120,6 +120,8 @@
     
   
   
+    
+  
   
   
   
@@ -130,8 +132,8 @@
       defer
       type="text/javascript"
       id="script-bundle"
-      src="/js/main.bundle.min.bf2f1d313c33e330808a293b8c19ce8c6d122eb67081e08dba03cf42a35341eba1e8fa9cdc13f5a08df92ef9bc8db08d1e9e04e0c8637787bc4d1208a2e4b948.js"
-      integrity="sha512-vy8dMTwz4zCAiik7jBnOjG0SLrZwgeCNugPPQqNTQeuh6Pqc3BP1oI35Lvm8jbCNHp4E4Mhjd4e8TRIIouS5SA=="
+      src="/js/main.bundle.min.a9999e7d5a6aa7827cf40e5da4e36f779fb70170a0e3d58b9ec4b471f41eba10b952a1f8f566b7c3ebdfb5e936e7b63af610cfb815f75fc5d91684e704a34cd5.js"
+      integrity="sha512-qZmefVpqp4J89A5dpONvd5&#43;3AXCg49WLnsS0cfQeuhC5UqH49Wa3w&#43;vftek257Y69hDPuBX3X8XZFoTnBKNM1Q=="
       data-copy="Copy"
       data-copied="Copied"></script>
   
@@ -264,7 +266,13 @@
     </div>
     
     
-      <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
+      <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl bg-neutral/25 dark:bg-neutral-800/25"></div>
+  <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+    <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
   
   
     <a href="/" class="text-base font-medium truncate min-w-0 shrink">
@@ -464,6 +472,16 @@
 
 
 
+  </div>
+</div>
+
+
+<script
+  type="text/javascript"
+  src="/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
+  integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
+  data-blur-id="menu-blur"></script>
+
     
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
@@ -475,6 +493,37 @@
 
     
     <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >Home</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/lessons/"
+      >Lessons</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/lessons/dify-scraper-thridlesson/"
+      >Dify auto scraper</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
         Dify auto scraper
@@ -588,6 +637,47 @@
       
       
       
+      
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-did-i-do">What did I do?</a></li>
+    <li><a href="#components">Components</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-did-i-do">What did I do?</a></li>
+    <li><a href="#components">Components</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
       
 
 
@@ -748,197 +838,299 @@
   
   
     <style>
- 
-#chat-box {
-    max-width: 520px;
-    height: 520px;
-    overflow-y: auto;
-
-     
-    background: var(--card-background, rgba(255,255,255,0.8));
-    border: 1px solid var(--card-border, rgba(0,0,0,0.08));
-    border-radius: 1rem;
-
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-
-     
-    box-shadow: var(--shadow, 0 6px 20px rgba(0,0,0,0.06));
-
-    font-family: inherit;
+#chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  font-family: inherit;
 }
 
- 
-#chat-box div {
-    margin: 0.4rem 0;
-    padding: 0.55rem 0.75rem;
-
-    border-radius: 0.75rem;
-
-    font-size: 0.95rem;
-    line-height: 1.4;
-
-    word-break: break-word;
-
-     
-    color: var(--body-text, inherit);
+#chat-panel {
+  display: none;
+  flex-direction: column;
+  width: 360px;
+  max-width: calc(100vw - 48px);
+  height: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #ffffff;
 }
 
- 
-#chat-box div:nth-child(odd) {
-    background: var(--card-subtle, rgba(0,0,0,0.04));
+#chat-panel.open {
+  display: flex;
 }
 
- 
-#chat-box div:contains("Bot:") {
-    opacity: 0.95;
+.dark #chat-panel {
+  background: #1f2937;
+  border-color: rgba(255,255,255,0.08);
 }
 
- 
-#chat-input {
-    width: 340px;
-    max-width: 70vw;
-
-    padding: 0.65rem 0.85rem;
-
-    border-radius: 0.75rem;
-
-    border: 1px solid var(--card-border, rgba(0,0,0,0.12));
-
-    background: var(--card-background, rgba(255,255,255,0.85));
-
-    color: var(--body-text, inherit);
-
-    font-family: inherit;
-
-    outline: none;
-
-    transition: border 0.15s ease, box-shadow 0.15s ease;
+#chat-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  flex-shrink: 0;
 }
 
-#chat-input:focus {
-    border-color: var(--primary, #6366f1);
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+#chat-panel-header span {
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
- 
-#chat-input::placeholder {
-    color: var(--muted-text, rgba(0,0,0,0.4));
+#chat-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.1s, background 0.1s;
 }
 
- 
-button {
-    padding: 0.65rem 0.9rem;
-
-    border-radius: 0.75rem;
-    border: 1px solid transparent;
-
-    background: var(--primary, #6366f1);
-    color: white;
-
-    font-family: inherit;
-
-    cursor: pointer;
-
-    transition: transform 0.05s ease, opacity 0.15s ease;
+#chat-close-btn:hover {
+  color: white;
+  background: rgba(255,255,255,0.15);
 }
 
-button:hover {
-    opacity: 0.92;
+#chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-button:active {
-    transform: scale(0.98);
+.chat-bubble {
+  max-width: 82%;
+  padding: 9px 13px;
+  border-radius: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  word-break: break-word;
 }
 
- 
-@media (prefers-color-scheme: dark) {
-    #chat-box {
-        background: var(--card-background, rgba(17,24,39,0.6));
-        border: 1px solid var(--card-border, rgba(255,255,255,0.08));
-    }
+.chat-bubble.user {
+  align-self: flex-end;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  border-bottom-right-radius: 4px;
+}
 
-    #chat-box div {
-        color: var(--body-text, #e5e7eb);
-    }
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: #111827;
+  border-bottom-left-radius: 4px;
+}
 
-    #chat-input {
-        background: var(--card-background, rgba(17,24,39,0.6));
-        border: 1px solid var(--card-border, rgba(255,255,255,0.12));
-        color: var(--body-text, #e5e7eb);
-    }
+.dark .chat-bubble.bot {
+  background: #374151;
+  color: #f3f4f6;
+}
 
-    #chat-input::placeholder {
-        color: rgba(255,255,255,0.4);
-    }
+.chat-bubble.thinking {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-style: italic;
+  border-bottom-left-radius: 4px;
+}
+
+.dark .chat-bubble.thinking {
+  background: #374151;
+  color: #9ca3af;
+}
+
+.chat-bubble ul {
+  margin: 4px 0;
+  padding-left: 16px;
+}
+
+#chat-input-row {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  flex-shrink: 0;
+}
+
+.dark #chat-input-row {
+  border-top-color: rgba(255,255,255,0.07);
+}
+
+#chat-text-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #f9fafb;
+  color: #111827;
+  font-family: inherit;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#chat-text-input:focus {
+  border-color: rgb(var(--color-primary-600));
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-600), 0.12);
+}
+
+.dark #chat-text-input {
+  background: #374151;
+  border-color: rgba(255,255,255,0.12);
+  color: #f9fafb;
+}
+
+.dark #chat-text-input::placeholder {
+  color: #9ca3af;
+}
+
+#chat-send-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: inherit;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+#chat-send-btn:hover {
+  opacity: 0.88;
+}
+
+#chat-send-btn:active {
+  transform: scale(0.97);
+}
+
+#chat-toggle-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgb(var(--color-primary-600));
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+#chat-toggle-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
 }
 </style>
 
-<div id="chat-box"></div>
-
-<input id="chat-input" type="text" placeholder="Ask something..." />
-<button onclick="sendMessage()">Send</button>
+<div id="chat-widget">
+  <div id="chat-panel" role="dialog" aria-label="AI Assistant">
+    <div id="chat-panel-header">
+      <span>AI Assistant</span>
+      <button id="chat-close-btn" onclick="toggleChatPanel()" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chat-messages" aria-live="polite"></div>
+    <div id="chat-input-row">
+      <input id="chat-text-input" type="text" placeholder="Ask something..." autocomplete="off" />
+      <button id="chat-send-btn" onclick="sendChatMessage()">Send</button>
+    </div>
+  </div>
+  <button id="chat-toggle-btn" onclick="toggleChatPanel()" aria-label="Open AI chat">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    </svg>
+  </button>
+</div>
 
 <script>
-
-const API_URL =
-  location.hostname === "localhost"
-    ? "http://localhost:7000/chat"
+(function () {
+  const API_URL = location.hostname === "localhost"
+    ? "http://localhost:7070/chat"
     : "https://desktop-frmtli1.taild8f6b7.ts.net/chat";
-const chatBox = document.getElementById("chat-box");
-const input = document.getElementById("chat-input");
 
-function formatMarkdown(text) {
+  window.toggleChatPanel = function () {
+    const panel = document.getElementById("chat-panel");
+    panel.classList.toggle("open");
+    if (panel.classList.contains("open")) {
+      document.getElementById("chat-text-input").focus();
+    }
+  };
+
+  function formatMarkdown(text) {
     return text
-        
-        .replace(/^## (.*$)/gim, '<h3>$1</h3>')
+      .replace(/^## (.*$)/gim, '<strong>$1</strong>')
+      .replace(/^- (.*$)/gim, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>')
+      .replace(/\n/g, '<br>');
+  }
 
-        
-        .replace(/^- (.*$)/gim, '<li>$1</li>')
-        .replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>')
-
-        
-        .replace(/\n/g, '<br>');
-}
-
-function addLine(text) {
+  function addBubble(text, type) {
+    const messages = document.getElementById("chat-messages");
     const div = document.createElement("div");
-    div.textContent = text;
-    div.innerHTML = formatMarkdown(text)
-    chatBox.appendChild(div);
-}
+    div.className = "chat-bubble " + type;
+    if (type === "bot") {
+      div.innerHTML = formatMarkdown(text);
+    } else {
+      div.textContent = text;
+    }
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+    return div;
+  }
 
-async function sendMessage() {
-    const message = input.value;
-    if (!message.trim()) return;
+  window.sendChatMessage = async function () {
+    const input = document.getElementById("chat-text-input");
+    const message = input.value.trim();
+    if (!message) return;
 
-    addLine("You: " + message);
+    addBubble(message, "user");
     input.value = "";
 
-    const loading = document.createElement("div");
-    loading.textContent = "Bot is thinking...";
-    chatBox.appendChild(loading);
+    const thinking = addBubble("Thinking…", "thinking");
 
     try {
-        
-        const res = await fetch(API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "text/plain" },
-            body: message
-        });
-
-        const answer = await res.text();
-
-        loading.remove();
-        addLine("Bot: " + answer);
-
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain" },
+        body: message
+      });
+      const answer = await res.text();
+      thinking.remove();
+      addBubble(answer, "bot");
     } catch (err) {
-        loading.remove();
-        addLine("Bot: backend not reachable");
-        console.error(err);
+      thinking.remove();
+      addBubble("Backend not reachable.", "bot");
+      console.error(err);
     }
-}
+  };
+
+  document.getElementById("chat-text-input").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") window.sendChatMessage();
+  });
+})();
 </script>
+
   
 </footer>
 <div
